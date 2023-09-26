@@ -1,8 +1,13 @@
 use tracing::Level;
 
+pub mod virtual_database;
+
 #[tokio::main]
 async fn main() {
+    // Sets up the logging and crash report handling
     initalize_logging();
+
+    // For now create a simple CLI
 }
 
 fn initalize_logging() {

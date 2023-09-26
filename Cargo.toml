@@ -33,6 +33,9 @@ tracing = "0.1.37"
 tracing-subscriber = "0.3.17"
 # Error report handler for panics. For colorful consistent panic logs
 color-eyre = "0.6.2"
+# Easy error handling - use whatever feels better to use
+anyhow = "1.0.75"
+thiserror = "1.0.48"
 
 [profile.dev.package.sqlx-macros]
 opt-level = 3
