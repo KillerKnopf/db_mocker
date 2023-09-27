@@ -1,18 +1,15 @@
-// TODO for this file:
+// TODO for this file that isn't in planning:
 // -------------------------
 // Implement error handling with the crates 'anyhow' or 'thisError'
 
 // Add User struct so that this program can create Users
-
-// Implement database creation
-
-// Implement table filling
-
-// Struct fields will be made pub when needed
 // -------------------------
 
 // THOUGTS for this file:
 // -------------------------
+// Don't use data from env or config
+// The applications using this library should provide them
+// In this package config and env values should be parsed by the tests
 
 // Maybe add ability to create roles
 

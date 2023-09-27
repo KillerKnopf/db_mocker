@@ -3,4 +3,8 @@
 # In a lib the cargo.lock file shouldn't be shared so that every lib user gets the latest appropriate dependencies
 /Cargo.lock
 
+# Secret configuration data
+.env
+# Secret configuration data for varying environments
+# Like production or development
 .env.*

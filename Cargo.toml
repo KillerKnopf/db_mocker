@@ -11,8 +11,14 @@ authors = ["Marc-Stephane Knopf"]
 serde = { version = "1.0.188", features = ["derive"] }
 serde_json = { version = "1.0.107" }
 serde_yaml = "0.9.25"
-# Async runtime
-tokio = { version = "1.32.0", features = ["rt", "macros"] }
+
+# Easy error handling - use whatever feels better to use
+anyhow = "1.0.75"
+thiserror = "1.0.48"
+
+# Library to create fake data
+fake = { version = "2.8", features = ["derive"] }
+
 # Library to query sql databases
 sqlx = { version = "0.7.1", features = [
 	"runtime-tokio",
@@ -22,20 +28,24 @@ sqlx = { version = "0.7.1", features = [
 	"uuid",
 	"json",
 ] }
-# Library to create fake data
-fake = { version = "2.8", features = ["derive"] }
+
+# Async runtime for sqlx
+tokio = { version = "1.32.0", features = ["rt", "macros"] }
+
 # Datetime crate
 chrono = { version = "0.4.31", features = ["serde"] }
 # Generate UUIDs
 uuid = { version = "1.4.1", features = ["v4"] }
+
+# Reading from config and env files for the tests
+config = "0.13.3"
+
 # Diagnostic information / logging
 tracing = "0.1.37"
 tracing-subscriber = "0.3.17"
 # Error report handler for panics. For colorful consistent panic logs
 color-eyre = "0.6.2"
-# Easy error handling - use whatever feels better to use
-anyhow = "1.0.75"
-thiserror = "1.0.48"
 
+# Optimize sqlx macros to a high level for better performance
 [profile.dev.package.sqlx-macros]
 opt-level = 3
