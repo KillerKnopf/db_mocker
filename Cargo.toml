@@ -2,7 +2,7 @@
 name = "db_mocker"
 version = "0.1.0"
 edition = "2021"
-authors = ["Marc Knopf"]
+authors = ["Marc-Stephane Knopf"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -12,7 +12,7 @@ serde = { version = "1.0.188", features = ["derive"] }
 serde_json = { version = "1.0.107" }
 serde_yaml = "0.9.25"
 # Async runtime
-tokio = { version = "1.32.0", features = ["full"] }
+tokio = { version = "1.32.0", features = ["rt", "macros"] }
 # Library to query sql databases
 sqlx = { version = "0.7.1", features = [
 	"runtime-tokio",
