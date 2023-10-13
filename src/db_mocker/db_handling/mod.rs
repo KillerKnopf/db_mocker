@@ -2,7 +2,7 @@ use anyhow::Result;
 use async_trait::async_trait;
 use sqlx::Connection;
 
-use super::{Table, User, VirtualDatabase};
+use super::{Table, User};
 
 // pub mod ms_sql;
 pub mod my_sql;
@@ -11,19 +11,20 @@ pub mod my_sql;
 
 #[async_trait]
 pub trait DbWriter {
+    type C;
+
     async fn create_database(
-        conn_settings: &ConnectionSettings,
-        virtual_db: &VirtualDatabase,
-    ) -> Result<()>;
-
-    async fn create_database_v2<T: Connection>(
-        connection: &mut T,
+        connection_settings: &mut ConnectionSettings,
         database_name: &str,
-    ) -> Result<()>;
+    ) -> Result<Self::C>;
 
-    async fn create_table<T: Connection>(connection: &mut T, database_name: &Table) -> Result<()>;
+    async fn create_table(mut connection: Self::C, table: &Table) -> Result<Self::C>;
 
-    async fn create_user<T: Connection>(connection: &mut T, user: &User) -> Result<()>;
+    async fn create_user(
+        mut connection: Self::C,
+        user: &User,
+        database_name: &str,
+    ) -> Result<Self::C>;
 }
 
 #[async_trait]

@@ -1,7 +1,7 @@
 # Build artifacts are unneeded
 /target
+
 # In a lib the cargo.lock file shouldn't be shared so that every lib user gets the latest appropriate dependencies
-Cargo.lock
 /Cargo.lock
 
 # Environment configuration for all environments

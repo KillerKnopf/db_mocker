@@ -54,19 +54,19 @@ pub enum UserType {
 pub struct Table {
     pub table_name: String,
     pub columns: Vec<Column>,
-    pub primary_keys: Vec<String>,
-    pub foreign_keys: Vec<ForeignKey>,
-    pub uniques: Vec<String>,
-    pub indices: Vec<Index>,
+    pub primary_keys: Vec<String>,     //
+    pub foreign_keys: Vec<ForeignKey>, //
+    pub uniques: Vec<String>,          //
+    pub indices: Vec<Index>,           //
     pub datasets: Vec<Vec<DataType>>,
 }
 
 pub struct Column {
     pub column_name: String,
     pub datatype: DataType,
-    pub default: Option<String>,
-    pub auto_increment: bool,
-    pub not_null: bool,
+    pub default: Option<String>, //
+    pub auto_increment: bool,    //
+    pub not_null: bool,          //
 }
 
 pub struct ForeignKey {
